@@ -12,6 +12,7 @@ constant.append(b)
 
 del constant[-1]
 
+
 @app.route("/")
 def show_items():
     return f"<h3>Number of books: {constant}!!!<h3>"
