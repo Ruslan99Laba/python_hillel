@@ -6,11 +6,11 @@ app = Flask(__name__)
 
 constant = [1, 2, 3]
 
-b = randint(0, 100)
+item_list = randint(0, 100)
 
-constant.append(b)
+constant.pop()
 
-del constant[-1]
+constant.append(item_list)
 
 
 @app.route("/")
@@ -18,14 +18,15 @@ def show_items():
     return f"<h3>Number of books: {constant}!!!<h3>"
 
 
-@app.route("/add_item")
-def add_item():
-    return f"<h3>Number of books: {constant.append(b)}!!!<h3>"
-
-
 @app.route("/delete_item")
 def delete_item():
-    return f"<h3>Number of books: {constant}!!!<h3>"
+    return f"<h3>Number of books: {constant.pop()}!!!<h3>"
+
+
+@app.route("/add_item")
+def add_item():
+    return f"<h3>Number of books: {constant.append(item_list)}!!!<h3>"
+
 
 
 if __name__ == "__main__":
